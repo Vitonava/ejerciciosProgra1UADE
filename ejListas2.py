@@ -10,28 +10,34 @@ c. Recibir una lista como parámetro y devolver una nueva lista con los elemento
 Combinar estas tres funciones en un mismo programa."""
 
 import random
-def generar_lista_aleatoria(cantidad=50, rango=(1, 100)):
+def generar_lista_aleatoria(cantidad=50):
     """
     Genera una lista de números aleatorios entre un rango dado.
     :param cantidad: Cantidad de números a generar.
     :param rango: Rango de los números aleatorios.
     :return: Lista de números aleatorios.
     """
-    return [random.randint(rango[0], rango[1]) for _ in range(cantidad)]
+    listaAleatoria = [random.randint(1,100) for i in range(cantidad)]
+    return listaAleatoria
+
 def contiene_repetidos(lista):
     """
     Verifica si una lista contiene elementos repetidos.
     """
-    return len(lista) != len(set(lista))
+    for numero in lista: 
+        if lista.count(numero) > 1:
+            return True
+    return False
+
 def lista_unicos(lista):
     """
     Devuelve una nueva lista con los elementos únicos de la lista original.
     """
-    for elemento in lista:
-        
-        if lista.count(elemento) > 1:
-            listaSinRepetidos = [i for i in lista if i != elemento]
-    return listaSinRepetidos
+    listaUnicos = []
+    for numero in lista:
+        if numero not in listaUnicos:
+            listaUnicos.append(numero)
+    return listaUnicos
 #     return list(set(lista))  # Alternativa más sencilla para obtener elementos únicos
 
 def main():
@@ -40,15 +46,14 @@ def main():
     print("Lista aleatoria:", lista_aleatoria)
 
     # Verifica si la lista contiene elementos repetidos.
-    if contiene_repetidos(lista_aleatoria):
+    if contiene_repetidos(lista_aleatoria) == True:
         print("La lista contiene elementos repetidos.", len(lista_aleatoria))
+        # Genera una nueva lista con los elementos únicos de la lista original.
+        lista_unicos_resultado = lista_unicos(lista_aleatoria)
+        print("Lista con elementos únicos:", sorted(lista_unicos_resultado))
+        print("Cantidad de elementos únicos:", len(lista_unicos_resultado))
     else:
         print("La lista no contiene elementos repetidos.", len(lista_aleatoria))
-
-    # Genera una nueva lista con los elementos únicos de la lista original.
-    lista_unicos_resultado = lista_unicos(lista_aleatoria)
-    print("Lista con elementos únicos:", lista_unicos_resultado)
-    print("Cantidad de elementos únicos:", len(lista_unicos_resultado))
 
 if __name__ == "__main__":
     main()
