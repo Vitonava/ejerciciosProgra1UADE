@@ -6,7 +6,7 @@ def listaNrosAzar(cant = random.randint(1,9)):
     :param cant: Cantidad de números a generar.
     :return: Lista de números aleatorios.
     """
-    lA = [random.randint(1000, 9999) for _ in range(cant)]
+    lA = [random.randint(1000, 9999) for _ in range(cant)]  # Genera una lista de números aleatorios de 4 dígitos
     return lA
 
 # B
