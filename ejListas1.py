@@ -60,8 +60,5 @@ def main():
     else:
         print("La lista no es capicúa.")
 
-
-
-
 if __name__ == "__main__":
     main()
