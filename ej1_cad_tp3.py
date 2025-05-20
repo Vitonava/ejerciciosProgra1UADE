@@ -19,7 +19,7 @@ def main():
     cad = input("ingrese un texto: ")
 
     while len(cad) > 0:
-        if es_capicua(cad) == True:
+        if es_capicua(cad):
             print(f'la cadena: {cad} es capicua')
         else: 
             print(f'la cadena: {cad} no es capicua')        
