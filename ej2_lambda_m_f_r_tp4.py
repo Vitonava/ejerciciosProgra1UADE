@@ -9,4 +9,4 @@ lPar = list(filter(lambda n: n % 2 == 0,lista))
 lImpar = list(map(lambda n: n*2,list(filter(lambda n: n % 2 != 0,lista))))
 
 print(f'la lista de números pares es: {lPar}')
-print(f'la lista de números impares multiplicados por 2 es: {lImpar}')
+print(f'la lista de números impares multiplicados por 2es: {lImpar}')
