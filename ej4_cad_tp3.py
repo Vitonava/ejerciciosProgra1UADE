@@ -16,5 +16,6 @@ def main():
     c = input("ingrese una cadena de caracteres: ")
     n = int(input("ingrese la cantidad de letras que deben tener las palabras"))
     print(f'las palabras filtradas son: {filtrarPalabras(c,n)}')
+    
 if __name__ == '__main__':
     main()
