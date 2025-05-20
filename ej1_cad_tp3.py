@@ -10,7 +10,8 @@ def es_capicua(texto):
     entrada(parametro): cad de caracteres
     salida: True o False
     """
-    if texto == texto[::-1]:
+    cadena = texto.lower()
+    if cadena == cadena[::-1]:
         return True
     else: 
         return False
