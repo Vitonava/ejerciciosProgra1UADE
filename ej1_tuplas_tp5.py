@@ -24,15 +24,13 @@ def leerOro(carta):
     return False
 
 def main():
-    baraja = ["basto", "copa", "espada", "oro"]
-    numeros = list(range(1, 13))
-    mazo = tuple((numero, palo) for palo in baraja for numero in numeros) 
-    """# es lo mismo que 
-    for palo in palos:
+    baraja = ["basto", "copa", "espada", "oro"] 
+    mazo = []
+    for palo in baraja:
         for numero in range(1, 13):
             mazo.append((numero, palo))
     mazo = tuple(mazo)
-    # o
+    """# o
     mazo = tuple()
     for palo in baraja:
         for numero in range(1, 13):
