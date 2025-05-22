@@ -4,6 +4,12 @@ los almacene en un diccionario y los muestre.
 Al realizar dicha muestra, destacar la persona más joven en edad.
 """
 
+def sacarMenor(dic):
+    for nombre, datos in dic.items():
+        edad = datos["edad"]
+        if edad == min([datos["edad"] for datos in dic.values()]):
+            print(f'\t\t{nombre} - {datos}')
+
 def main():
     personas = {}
     while len(personas) < 3:
@@ -19,10 +25,7 @@ def main():
             "telefono": telefono
         }
     print(f'\t\t persona mas joven: ')
-    for nombre, datos in personas.items():
-        edad = datos["edad"]
-        if edad == min([datos["edad"] for datos in personas.values()]):
-            print(f'\t\t{nombre} - {datos}')
+    sacarMenor(personas)
 
 if __name__ == "__main__":
     main()
