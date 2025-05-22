@@ -26,7 +26,18 @@ def leerOro(carta):
 def main():
     baraja = ["basto", "copa", "espada", "oro"]
     numeros = list(range(1, 13))
-    mazo = tuple((numero, palo) for palo in baraja for numero in numeros)
+    mazo = tuple((numero, palo) for palo in baraja for numero in numeros) 
+    """# es lo mismo que 
+    for palo in palos:
+        for numero in range(1, 13):
+            mazo.append((numero, palo))
+    mazo = tuple(mazo)
+    # o
+    mazo = tuple()
+    for palo in baraja:
+        for numero in range(1, 13):
+            mazo += ((numero, palo),)
+    """
     print("\n\t\tCartas seleccionadas al azar:\n")
     lCartas = seleccionar_cartas(mazo, random.randint(1, 10))
     for i in lCartas:
