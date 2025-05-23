@@ -36,7 +36,5 @@ def main():
     print(f'\n')
     print(f'\t\tLista con áreas:\n{listaAreas}')
 
-
-
 if __name__ == '__main__':
     main()  
