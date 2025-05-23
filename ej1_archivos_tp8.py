@@ -1,46 +1,37 @@
 """
-leer desde el teclado los datos correspondientes a los alumnos de un curso (legajo, nombre) y grabarlos en un archivo csv.
-cada dato se separa con ; (punto y coma)
-el fin de datos se indica con un legajo -1
+Crea un programa que vaya leyendo las frases que el usuario teclea y las guarde en un fichero de texto llamado “frases.txt”. Terminará cuando la frase introducida sea "fin" (esa frase no deberá guardarse en el fichero).
 """
 import os
-
-def filtrarAlumnos(rutaArchivo):
-    try:
-        with open(rutaArchivo, 'r') as file: 
-            for linea in file:
-                legajo, nombre = linea.strip().split(';')
-                if int(legajo) < 1000:
-                    print(f'legajo: {legajo}, nombre: {nombre}')
-    except Exception as e:
-        print(f"Error al abrir el archivo: {e}")
-
-def cargarAlumno(nombreArchivo):
+def cargarFrases(nombreArchivo):
     try:
         rutaDirectorio = os.path.dirname(__file__)
         rutaArchivo = os.path.join(rutaDirectorio, nombreArchivo)
-        with open(rutaArchivo, 'w') as archivo:
+        with open(rutaArchivo, 'w') as arch:
             bandera = True
             while bandera:
-                legajo = int(input("Ingrese el legajo del alumno (o -1 para terminar): "))
-                if legajo != -1:
-                    nombre = input("Ingrese el nombre del alumno: ")
-                    registro = f'{str(legajo)};{nombre}\n'
-                    archivo.write(registro)
-                else:
-                    bandera = False
+                frase = input("ingrese una frase ('fin' para terminar): ")
+                while frase != 'fin':
+                    arch.write(f'{frase}\n')
+                    frase = input("ingrese una frase ('fin' para terminar): ")
+                bandera = False
     except FileNotFoundError:
         print("El archivo no existe")
-    except IOError:
-        print("Error de entrada/salida")
     except Exception as e:
         print(f"Error inesperado: {e}")
-    else:
-        filtrarAlumnos(rutaArchivo)
 
+def mostrarFrases(nombreArchivo):
+        try:
+            with open('frases.txt', 'r') as arch:
+                for linea in arch:
+                    print(linea.strip())
+        except FileNotFoundError:
+            print("El archivo no existe")
+        except Exception as e:
+            print(f"Error inesperado: {e}")
 
 def main():
-    cargarAlumno('alumnos.txt')
-    
+    cargarFrases('frases.txt')
+    mostrarFrases('frases.txt')
+
 if __name__ == "__main__":
-    main()        
+    main()
