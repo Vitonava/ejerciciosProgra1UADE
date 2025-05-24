@@ -1,0 +1,10 @@
+1234;Juan;M
+1234;Javier;M
+2345;Pedro;T
+3456;Maria;N
+4567;Ana;M
+5678;Jose;T
+6789;Luis;N
+7890;Laura;M
+8901;Carlos;T
+9012;Lucia;N
